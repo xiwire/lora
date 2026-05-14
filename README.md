@@ -22,8 +22,8 @@ LORA is specifically optimized for and tested against the following target platf
 | :--- | :--- | :--- |
 | **nih-plug** | VST3/CLAP Plugins | High-level audio processing graphs |
 | **Daisy Seed** | Embedded Hardware | Real-time DSP on ARM Cortex-M |
-| **Max/MSP Externals** | Anything | Patching environment used standalone or
-within Ableton Live  |
+| **Max/MSP Externals** | Anything | Patching environment used standalone or within Ableton Live |
+| **Supercollider** | Anything | Platform for synthesis |
 
 ## 📦 Installation
 
