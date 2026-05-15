@@ -27,13 +27,11 @@ where
     }
 }
 
-//! Fixed size buffers
-
 /// Fixed size buffer
 struct FixedSizeMonoBuffer<T, const SIZE: usize> {
     contents: [T; SIZE],
 }
 
-struct InterleavedStereoBuffer<T> {
+struct InterleavedStereoBuffer {
 
 }
