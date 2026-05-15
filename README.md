@@ -1,9 +1,11 @@
 # Library Of Rust Audio
 
-[![Crates.io](https://img.shields.io/crates/v/lora.svg)](https://crates.io/crates/lora)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **LORA** (**L**ibrary **O**f **R**ust **A**udio) is a high-performance _Digital Signal Processing_ (DSP) library written in Rust.
+
+> [!WARNING]
+> Work in progress, please ignore.
 
 > [!NOTE]
 > This library is primarily intended for my personal use. It is highly opinionated.
