@@ -2,23 +2,22 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**LORA** (**L**ibrary **O**f **R**ust **A**udio) is a high-performance _Digital Signal Processing_ (DSP) library written in Rust.
+**LORA** (**L**ibrary **O**f **R**ust **A**udio) is a _Digital Signal Processing_ (DSP) library written in Rust.
 
-> [!WARNING]
+> [!CAUTION]
 > Work in progress, please ignore.
 
 > [!NOTE]
 > This library is primarily intended for my personal use. It is highly opinionated.
 
-It provides a suite of reusable abstractions and primitives designed to streamline the development of audio software across platformsranging from high-level plugin architectures to low-level embedded systems.
+Reusable abstractions and primitives designed to facilitate the development of audio software across platforms.
 
-The library focuses on ease-of-use, idiomatic constructions, efficiency, and platform independence, ensuring that DSP logic can be shared across different execution environments without modification.
+Focuses on ease-of-use, idiomatic constructions, efficiency, and platform independence, trying to ensure that DSP logic can be shared across different targets without modification.
 
 # Features
 
-- **Platform Agnostic:** Designed to operate without relying on a standard library (`no_std` compatible) and with C bindings, allowing it to run _anywhere_. Logic is decoupled from the actual platform it runs on to ensure consistent behavior across different projects. Library idioms allows writing in terms of _what you want to do_ instead of thinking what it's running on.
+- **Platform Agnostic:** The main dsp blocks are designed to operate without relying on a standard library (`no_std` compatible) and with C bindings.
 - **Generic Abstractions:** Flexible and easy to use implementations of common audio primitives (oscillators, filters, envelopes, delay lines, effects).
-- **Zero-Cost Abstractions:** Leverages Rust's trait system to provide high-level APIs without sacrificing performance.
 
 # Compatibility
 
@@ -49,31 +48,12 @@ LORA is built around the concept of **DSP Units**. Each unit implements a standa
 
 Examples are in the [examples](/examples) folder.
 
-Using **LORA** normally goes like this:
-
-```rust
-use lora::dsp::{DelayLine, Send, LFO};
-
-fn chorus(input_audio: f32, &output_audio: f32) {
-    let mut delayline: DelayLine = DelayLine::new(sample_rate::seconds(0.2));
-    let mut lfo: LFO = LFO::Triangle::new(
-        LFO::Props{
-            rate: sample_rate::hertz(1),
-            amplitude: 0.017,
-            offset: 0.017,
-        }
-    );
-    lfo::modulate(delayline::params::time);
-    let block_output = input_audio.copy();
-    ProcessingBlock::new(input_audio, output_audio, [Send, delayline, Return])
-
-    output_audio.copy(Mix(drywet, input_audio, block_output));
-}
-```
-
 # Protyping with **LORA** 
 
-I've made a companion tool [`run_lora_run`]() for quickly testing DSP algorithms. It allows you to quickly prototype and run your algorithms built with **LORA**.
+> [!WARNING]
+> Not published yet.
+
+I've made a companion tool [`lora-tauri`](https://github.com/xiwire/lora-tauri) for quickly testing DSP algorithms. It allows you to quickly prototype and run your algorithms built with **LORA**.
 
 # Contributing
 
