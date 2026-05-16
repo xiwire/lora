@@ -1,4 +1,8 @@
 //! LORA is a DSP library.
+#![cfg_attr(not(feature = "std"), no_std)]
+
+#[cfg(feature = "alloc")]
+extern crate alloc;
 
 /// For all the proper DSP thingies. 
 pub mod dsp;

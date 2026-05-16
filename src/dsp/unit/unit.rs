@@ -1,27 +1,12 @@
-use std::{any::Any, collections::HashSet};
+// use std::collections::HashSet;
+//
+// use crate::dsp::audio_buffer::AudioBuffer;
 
-pub trait ProcessingUnit { 
-    fn process(&self) -> ();
+pub trait ProcessingUnit {
+    fn process(&mut self) -> ();
+    fn output_into(&self, other: dyn ProcessingUnit) -> ();
+    fn input_from(&self, other: dyn ProcessingUnit) -> ();
+    // fn to_buffer(&self, buffer: &dyn AudioBuffer) -> ();
 }
 
-pub struct UnitParam<T: Default> {
-    value: T,
-}
-
-impl<T: Default> UnitParam<T> {
-    pub fn new() -> Self {
-        UnitParam { value: T::default() }
-    }
-
-    pub fn init(value: T) -> Self {
-        UnitParam { value: value }
-    }
-}
-
-pub struct UnitParamSet {
-    params: HashSet<String, Box<dyn Any>>,
-}
-
-impl UnitParamSet {
-
-}
+pub struct ProcessingUnitChain {}

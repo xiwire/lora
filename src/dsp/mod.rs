@@ -7,6 +7,12 @@ pub mod unit;
 /// Audio buffers and such
 pub mod audio_buffer;
 
-/// Audio buffers and such
+/// Basic oscillators, either mathematically computed or through lookup tables.
 pub mod oscillator;
 
+/// Filters.
+pub mod filter;
+
+// Parameters
+#[macro_use]
+pub mod param;
