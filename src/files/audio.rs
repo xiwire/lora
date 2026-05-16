@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use wave_stream::{open_wav::OpenWav, wave_reader::RandomAccessOpenWavReader};
+use wave_stream::{open_wav::OpenWav};
 
 use crate::dsp::buffer::{AudioBuffer, DynamicMonoBuffer};
 
