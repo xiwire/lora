@@ -5,7 +5,7 @@ pub mod constants;
 pub mod unit;
 
 /// Audio buffers and such
-pub mod audio_buffer;
+pub mod buffer;
 
 /// Basic oscillators, either mathematically computed or through lookup tables.
 pub mod oscillator;

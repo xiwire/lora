@@ -8,5 +8,5 @@ extern crate alloc;
 pub mod dsp;
 
 /// For manipulating files in storage. Only applies to `feature=desktop` builds. For managing files
-/// in embdeded system use the `storage` mod.
+/// in embedded system use the `storage` mod.
 pub mod files;

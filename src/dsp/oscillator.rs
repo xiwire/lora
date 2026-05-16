@@ -1,5 +1,9 @@
 use crate::dsp::constants;
 
+#[allow(unused_imports)]
+#[cfg(feature = "embedded")]
+use micromath::F32Ext;
+
 pub struct Sine {
     pos: f32,
     freq: f32,
@@ -14,6 +18,6 @@ impl Sine {
         self.pos += self.freq / (sample_rate as f32);
         self.pos %= 1.0;
 
-        (self.pos * 2.0 * constants::PI).sin()
+        f32::sin(self.pos * 2.0 * constants::PI)
     }
 }

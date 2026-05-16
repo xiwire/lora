@@ -3,7 +3,13 @@ name = "lora"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "lora"
+crate-type = ["lib", "staticlib", "cdylib"]
+
 [dependencies]
+micromath = { version = "2.1.0", optional = true}
+ringbuf = { version = "0.5.0", default-features = false, features = ["alloc"] }
 wave_stream = { version = "0.5.0", optional = true }
 
 [features]
@@ -13,7 +19,7 @@ std = []
 alloc = []
 
 desktop = ["std", "alloc", "dep:wave_stream"]
-embedded = []
+embedded = ["dep:micromath"]
 
 # platforms
 nih_plug = ["desktop"]

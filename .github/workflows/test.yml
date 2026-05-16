@@ -1,0 +1,26 @@
+name: test
+
+on:
+  push:
+    branches: [ "main", "development" ]
+  pull_request:
+    branches: [ "main", "development" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: build desktop
+      run: cargo build --verbose --features desktop
+    - name: build embedded
+      run: cargo build --verbose --features embedded,alloc
+    - name: run tests desktop
+      run: cargo test --verbose --features desktop
+    - name: run tests embedded
+      run: cargo test --verbose --features desktop

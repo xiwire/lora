@@ -1,5 +1,8 @@
-use core::f32::consts::PI;
+#[allow(unused_imports)]
+#[cfg(feature = "embedded")]
+use micromath::F32Ext;
 
+use crate::dsp::constants;
 use crate::{define_params};
 
 // 1. Define the high-level control parameters.
@@ -56,7 +59,7 @@ impl BiquadFilter {
         let q = self.state.q.current;
         let mode = self.state.mode.current.round() as i32;
         
-        let omega = 2.0 * PI * freq / self.sample_rate;
+        let omega = 2.0 * constants::PI * freq / self.sample_rate;
         let sin_w = omega.sin();
         let cos_w = omega.cos();
         let alpha = sin_w / (2.0 * q);
