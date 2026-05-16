@@ -1,8 +1,10 @@
-use ringbuf::{HeapRb, StaticRb, traits::{Consumer, Producer}};
+pub use ringbuf::traits::*;
+use ringbuf::{HeapRb, StaticRb};
 use core::default::Default;
 
 pub trait AudioBuffer {
     type T;
+
     fn write(&mut self, data: &[Self::T]) -> usize;
     fn read(&mut self, output: &mut [Self::T]) -> usize;
     fn clear(&mut self) -> usize;

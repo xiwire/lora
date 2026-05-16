@@ -2,7 +2,7 @@ use std::path::Path;
 
 use wave_stream::{open_wav::OpenWav};
 
-use crate::dsp::buffer::{AudioBuffer, DynamicMonoBuffer};
+use crate::dsp::buffer::*;
 
 pub fn from_path(filepath: &str) -> DynamicMonoBuffer<f32> {
     // TODO: should actually accept multiple audio formats
