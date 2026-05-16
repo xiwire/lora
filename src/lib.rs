@@ -10,3 +10,6 @@ pub mod dsp;
 /// For manipulating files in storage. Only applies to `feature=desktop` builds. For managing files
 /// in embedded system use the `storage` mod.
 pub mod files;
+
+#[cfg(test)]
+mod tests;
