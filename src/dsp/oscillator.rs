@@ -1,5 +1,6 @@
 use crate::dsp::constants;
 
+#[allow(unused_imports)]
 #[cfg(feature = "embedded")]
 use micromath::F32Ext;
 
